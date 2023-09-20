@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="img/Screenshot 2023-07-06 111000.png" rel="icon"/>
+    <title>shru cosmatic | For the love of beauty.
+    </title>
+    <link href="css/reset.css" rel="stylesheet"><!-- CSS reset -->
+    <link href="css/style.css" rel="stylesheet"><!-- Resource style-->
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/cus.css">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- fonts -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">    
+
+    <link href="css/media.css" rel="stylesheet">
+    <!-- img compere -->
+    <script>
+      function initComparisons() {
+        var x, i;
+        /*find all elements with an "overlay" class:*/
+        x = document.getElementsByClassName("img-comp-overlay");
+        for (i = 0; i < x.length; i++) {
+          /*once for each "overlay" element:
+          pass the "overlay" element as a parameter when executing the compareImages function:*/
+          compareImages(x[i]);
+        }
+        function compareImages(img) {
+          var slider, img, clicked = 0, w, h;
+          /*get the width and height of the img element*/
+          w = img.offsetWidth;
+          h = img.offsetHeight;
+          /*set the width of the img element to 50%:*/
+          img.style.width = (w / 2) + "px";
+          /*create slider:*/
+          slider = document.createElement("DIV");
+          slider.setAttribute("class", "img-comp-slider");
+          /*insert slider*/
+          img.parentElement.insertBefore(slider, img);
+          /*position the slider in the middle:*/
+          slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+          slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+          /*execute a function when the mouse button is pressed:*/
+          slider.addEventListener("mousedown", slideReady);
+          /*and another function when the mouse button is released:*/
+          window.addEventListener("mouseup", slideFinish);
+          /*or touched (for touch screens:*/
+          slider.addEventListener("touchstart", slideReady);
+          /*and released (for touch screens:*/
+          window.addEventListener("touchend", slideFinish);
+          function slideReady(e) {
+            /*prevent any other actions that may occur when moving over the image:*/
+            e.preventDefault();
+            /*the slider is now clicked and ready to move:*/
+            clicked = 1;
+            /*execute a function when the slider is moved:*/
+            window.addEventListener("mousemove", slideMove);
+            window.addEventListener("touchmove", slideMove);
+          }
+          function slideFinish() {
+            /*the slider is no longer clicked:*/
+            clicked = 0;
+          }
+          function slideMove(e) {
+            var pos;
+            /*if the slider is no longer clicked, exit this function:*/
+            if (clicked == 0) return false;
+            /*get the cursor's x position:*/
+            pos = getCursorPos(e)
+            /*prevent the slider from being positioned outside the image:*/
+            if (pos < 0) pos = 0;
+            if (pos > w) pos = w;
+            /*execute a function that will resize the overlay image according to the cursor:*/
+            slide(pos);
+          }
+          function getCursorPos(e) {
+            var a, x = 0;
+            e = (e.changedTouches) ? e.changedTouches[0] : e;
+            /*get the x positions of the image:*/
+            a = img.getBoundingClientRect();
+            /*calculate the cursor's x coordinate, relative to the image:*/
+            x = e.pageX - a.left;
+            /*consider any page scrolling:*/
+            x = x - window.pageXOffset;
+            return x;
+          }
+          function slide(x) {
+            /*resize the image:*/
+            img.style.width = x + "px";
+            /*position the slider:*/
+            slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+          }
+        }
+      }
+      </script>
+      
+</head>
+<body>
+    <header>
+      <section style="background-color: #e35f21; height: 32px;" class="d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-12 d-flex justify-content-center">
+              <h4 class="fj d-flex dispaly-inline-block">Mid-Season Sale Up to 70% Off.</h4>
+              <a href="javascript:;" style="text-decoration: none; color: black;"><h4 class="fj">SHOP NEW</h4></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <header style="background-color: black; height: 70px;" class="h-hight">
+        <section>
+          <div class="container padding-h">
+            <div class="row">
+              <div class="col-xxl-12 d-flex col-12 justify-content-between" style="padding-right: 0px !important;">
+                <div class="col-2 d-flex justify-content-start align-items-center d-xl-none">
+                  <i class="fa-solid fa-bars w fs-2 pe-5"></i>
+                  <i class="fa-solid fa-magnifying-glass w fs-2 pe-5"></i>
+                </div>
+                <div class="col-xxl-2 col-2">
+                  <div class="logo-w">
+                    <img src="img/Screenshot 2023-07-06 112240.png">
+                  </div>
+                </div>
+                <div class="col-xxl-7 col-xl-7 d-flex justify-content-evenly align-items-center d-none d-xl-flex justify-content-xl-evenly">
+                    <a href="javascript:;" class="w"><h4>SHOP</h4></a>
+                    <a href="javascript:;" class="w"><h4>PRODUCT</h4></a>
+                    <a href="javascript:;" class="w"><h4>BLOG</h4></a>
+                    <a href="javascript:;" class="w"><h4>COLLECTION</h4></a>
+                    <a href="javascript:;" class="w"><h4>NEW IN</h4></a>
+                </div>
+                <div class="col-xxl-2 col-xl-3 d-flex justify-content-end align-items-center">
+                  <div>
+                    <i class="fa-solid fa-magnifying-glass w fs-2 pe-5 d-none d-xl-inline-block"></i>
+                    <i class="fa-regular fa-user w fs-2 pe-5"></i>
+                    <i class="fa-regular fa-heart w fs-2 pe-5 d-none d-xl-inline-block"></i>
+                    <i class="fa-solid fa-cart-shopping w fs-2 pe-3"></i>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <section style="position: fixed; bottom: 0%; background-color: black; width: 100%; height: 50px; z-index: 9999999;" class="d-xl-none">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 d-flex justify-content-evenly justify-content-sm-between pt-2">
+                <div class="col-2 text-center">
+                  <i class="fa-solid fa-house-chimney w fs-3"></i>
+                  <p class="w m-0 fs-3 fj">Home</p>
+                </div>
+                <div class="col-2 text-center">
+                  <i class="fa-solid fa-magnifying-glass w fs-3"></i>
+                  <p class="w m-0 fs-3 fj">Search</p>
+                </div>
+                <div class="col-2 text-center">
+                  <i class="fa-brands fa-squarespace w fs-3"></i>
+                  <p class="w m-0 fs-3 fj">Collection</p>
+                </div>
+                <div class="col-2 text-center">
+                  <i class="fa-regular fa-user w fs-3"></i>
+                  <p class="w m-0 fs-3 fj">Account</p>
+                </div>
+                <div class="col-2 text-center">
+                  <i class="fa-solid fa-bag-shopping w fs-3"></i>
+                  <p class="w m-0 fs-3 fj">Cart</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </header>
+    <main>
+      <section class="banner" style="position: relative;">
+        <div class="col-xxl-12 img-height col-12">
+          <!-- <img src="img/home-5-slider-min.jpg" style="width: 100%;"/> -->
+        </div>
+        <div class="container top-font" style="position: absolute; top: 40%;">
+          <div class="row">
+            <div class="col-xxl-12">
+              <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7 text-center marg-font" style="margin-left: 180px;">
+                <h1 class="fp display-2 fw-bold font-cw">Sirups</h1>
+                <p class="fs-3 fj font-cw">Quisquemos sodales suscipit tortor ditaemcos
+                  condimentum meleifend diverra loremous.</p>
+                  <button class="cta" style="margin-left: 100px; margin-top: 30px;">
+                    <span class="span fj w">SHOP NEW</span>
+                    <span class="second">
+                      <svg width="50px" height="20px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                          <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                          <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                        </g>
+                      </svg>
+                    </span> 
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container" style="max-width: 100%;">
+          <div class="row">
+            <div class="col-xxl-12 d-none d-xl-block">
+              <div class="text-center" style="padding: 20px 0px;">
+                <p class="b fj fs-3 fw-medium">Free Shipping Worldwide. No Minimum Purchase*</p>
+              </div>
+              <div class="col-xxl-12 d-flex" style="padding: 0px 0px;">
+                <div class="col-xxl-4 col-wh mx-2 pro">
+                  <div class="img-1" style="position: relative;">
+                    <h1 class="fp w display-4 fw-blod text-position">Cosmopolis</h1>
+                  </div>
+                </div>
+                <div class="col-xxl-4 col-wh mx-2 pro">
+                  <div class="img-2"  style="position: relative;">
+                    <h1 class="fp w display-4 fw-blod text-position">Milancelos</h1>
+                  </div>
+                </div>
+                <div class="col-xxl-4 col-wh mx-2 pro">
+                  <div class="img-3"  style="position: relative;">
+                    <h1 class="fp w display-4 fw-blod text-position">Loremica</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 575px -->
+            <div class="col-xxl-12 d-xl-none">
+              <div class="text-center" style="padding: 15px 0px;">
+                <p class="b fj fs-3 fw-medium">Free Shipping Worldwide. No Minimum Purchase*</p>
+              </div>
+              <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="img/h5c1-spotlight-banner-1_570x.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption" style="position: absolute; left: 50%; top: 50%; transform: translateX(-50%);">
+                      <h1 class="fp display-2">Cosmopolis</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/h5c1-spotlight-banner-2_570x.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption" style="position: absolute; left: 50%; top: 50%; transform: translateX(-50%);">
+                      <h1 class="fp display-2">Milancelos</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/h5c1-spotlight-banner-3_570x.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption" style="position: absolute; left: 50%; top: 50%; transform: translateX(-50%);">
+                      <h1 class="fp display-2">Loremica</h1>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style="padding-bottom: 100px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-12">
+              <div class="fp fs-1 fw-medium b text-center pt-5 pb-3">
+                New Arrivals
+              </div>
+            </div>
+
+            <div class="col-xxl-12 d-xxl-flex d-flex flex-wrap">
+              <div class="col-xxl-3 col-6 col-xl-3 p-hover" style="position: relative;">
+                <div class="product-1"></div>
+                <div class="product_h-1"></div>
+                <div class="text-center margin-r-pro" style="margin-right: 60px;">
+                  <h2 style="font-size: 16px; font-weight: 700;" class="mt-4 mb-2">Amber</h2>
+                  <p class="fs-4">(Product 14)sample - Makeup....</p>
+                  <span class="rate-ce">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <h2 class="fs-3 mt-3">$89.00</h2>
+                  <span class="d-flex padding-c-p" style="padding-left: 75px; margin-top: 20px;">
+                    <div class="pro-color d-flex justify-content-center align-items-center">
+                      <div class="pro-back">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: cornflowerblue;">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: forestgreen;">
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-6 col-xl-3 p-hover" style="position: relative;">
+                <div class="product-2"></div>
+                <div class="product_h-2"></div>
+                <div class="text-center margin-r-pro" style="margin-right: 60px;">
+                  <h2 style="font-size: 16px; font-weight: 700;" class="mt-4 mb-2">Amber</h2>
+                  <p class="fs-4">(Product 13)sample - Makeup....</p>
+                  <span class="rate-ce">
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star "></i>
+                  </span>
+                  <h2 class="fs-3 mt-3 rate-ce">$99.00  <span style="color: #ea4226;">$69.00</span></h2>
+                  <span class="d-flex padding-c-p" style="padding-left: 75px; margin-top: 20px;">
+                    <div class="pro-color d-flex justify-content-center align-items-center">
+                      <div class="pro-back" style="background-color: gainsboro;">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: dimgray;">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: forestgreen;">
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-6 col-xl-3 p-hover" style="position: relative;">
+                <div class="product-3"></div>
+                <div class="product_h-3"></div>
+                <div class="text-center margin-r-pro" style="margin-right: 60px;">
+                  <h2 style="font-size: 16px; font-weight: 700;" class="mt-4 mb-2">Amber</h2>
+                  <p class="fs-4">(Product 10)sample - Makeup....</p>
+                  <span class="rate-ce">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <h2 class="fs-3 mt-3 rate-ce">$99.00  <span style="color: #ea4226;">$49.00</span></h2>
+                  <span class="d-flex padding-c-p2" style="padding-left: 100px; margin-top: 20px;">
+                    <div class="pro-color d-flex justify-content-center align-items-center">
+                      <div class="pro-back" style="background-color: mistyrose;">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: palevioletred;">
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-6 col-xl-3 p-hover" style="position: relative;">
+                <div class="product-4"></div>
+                <div class="product_h-4"></div>
+                <div class="text-center margin-r-pro" style="margin-right: 60px;">
+                  <h2 style="font-size: 16px; font-weight: 700;" class="mt-4 mb-2">Amber</h2>
+                  <p class="fs-4">(Product 1)sample - Makeup....</p>
+                  <span class="rate-ce">
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                  </span>
+                  <h2 class="fs-3 mt-3 rate-ce">$69.00  <span style="color: #ea4226;">$39.00</span></h2>
+                  <span class="d-flex padding-c-p" style="padding-left: 75px; margin-top: 20px;">
+                    <div class="pro-color d-flex justify-content-center align-items-center">
+                      <div class="pro-back" style="background-color: black">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: brown">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: cornflowerblue;">
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="position-relative">
+        <div class="banner-3">
+        </div>
+        <div class="container position-absolute banner-position" style="top: 35%; left:5%">
+          <div class="row">
+            <div class="col-xxl-12 col-12 d-flex justify-content-end">
+              <div class="col-4 col-lg-5 col-xl-4 text-center">
+                <h1 class="fp display-3 fw-bold">Metropolis</h1>
+                <h1 class="display-3 fw-medium">---</h1>
+                <P class="fj fs-3">
+                  Quisquemos sodales suscipit tortor ditaemcos<br/> condimentum meleifend diverra loremous.
+                </P>
+                <button class="cta d-none d-lg-flex" style="margin-left: 100px; margin-top: 30px;">
+                  <span class="span fj w">SHOP NEW</span>
+                  <span class="second">
+                    <svg width="50px" height="20px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                        <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                        <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                      </g>
+                    </svg>
+                  </span> 
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style="padding-top: 80px; padding-bottom: 100px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-12">
+              <p class="fj b fs-4 text-center">Pellentesque scelerisque eget lectus vitae congue phasellus an laoreet purus. Proin accumsan commodo deur<br/> venenatis. Nunc nec vestibulum nisl sit amet tristique libero, mulla cursus hendrerit facilisis. Duis mattis sit amet<br/> neque danos de condimentum aliquam erat volutpat nam scelerisque.</p>
+            </div>
+            <div class="col-xxl-12 d-flex justify-content-center" style="padding-top: 50px; padding-bottom: 50px;">
+              <div class="col-3 col-xl-2"><h1 class="fp fw-bold" style="text-decoration: underline;">Trend Now</h1></div>
+              <div class="col-4 col-xl-2"><h1 class="fp fw-bold e4">Editor's Picks</h1></div>
+              <div class="col-3 col-xl-2"><h1 class="fp fw-bold e4">Most Viewed</h1></div>
+            </div>
+            <div class="col-xxl-12 d-xxl-flex d-flex flex-wrap">
+              <div class="col-xxl-3 col-6 col-xl-3 p-hover" style="position: relative;">
+                <div class="product-5"></div>
+                <div class="product_h-5"></div>
+                <div class="text-center margin-r-pro" style="margin-right: 60px;">
+                  <h2 style="font-size: 16px; font-weight: 700;" class="mt-4 mb-2">Amber</h2>
+                  <p class="fs-4">(Product 15)sample - Makeup,skinca....</p>
+                  <span class="rate-ce">
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                  </span>
+                  <h2 class="fs-3 mt-3">$86.00</h2>
+                  <span class="d-flex padding-c-p" style="padding-left: 75px; margin-top: 20px;">
+                    <div class="pro-color d-flex justify-content-center align-items-center">
+                      <div class="pro-back" style="background-color: lightblue;">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: lightcoral;">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: cornflowerblue;">
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-6 col-xl-3 p-hover" style="position: relative;">
+                <div class="product-6"></div>
+                <div class="product_h-6"></div>
+                <div class="text-center margin-r-pro" style="margin-right: 60px;">
+                  <h2 style="font-size: 16px; font-weight: 700;" class="mt-4 mb-2">Amber</h2>
+                  <p class="fs-4">(Product 12)sample - Makeup,skinca....</p>
+                  <span class="rate-ce">
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                    <i class="fa-solid fa-star b"></i>
+                  </span>
+                  <h2 class="fs-3 mt-3 rate-ce">$99.00  <span style="color: #ea4226;">$89.00</span></h2>
+                  <span class="d-flex padding-c-p" style="padding-left: 75px; margin-top: 20px;">
+                    <div class="pro-color d-flex justify-content-center align-items-center">
+                      <div class="pro-back" style="background-color: burlywood;">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: gainsboro;">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: crimson;">
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-6 col-xl-3 p-hover" style="position: relative;">
+                <div class="product-7"></div>
+                <div class="product_h-7"></div>
+                <div class="text-center margin-r-pro" style="margin-right: 60px;">
+                  <h2 style="font-size: 16px; font-weight: 700;" class="mt-4 mb-2">Amber</h2>
+                  <p class="fs-4">(Product 8)sample - Makeup,skinca....</p>
+                  <span class="rate-ce">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <h2 class="fs-3 mt-3 b">$69.00</h2>
+                  <span class="d-flex padding-c-p2" style="padding-left: 100px; margin-top: 20px;">
+                    <div class="pro-color d-flex justify-content-center align-items-center">
+                      <div class="pro-back" style="background-color: beige;">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: lightpink;">
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-6 col-xl-3 p-hover" style="position: relative;">
+                <div class="product-8"></div>
+                <div class="product_h-8"></div>
+                <div class="text-center margin-r-pro" style="margin-right: 60px;">
+                  <h2 style="font-size: 16px; font-weight: 700;" class="mt-4 mb-2">Amber</h2>
+                  <p class="fs-4">(Product 7)sample - Makeup,skinca....</p>
+                  <span class="rate-ce">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <h2 class="fs-3 mt-3 b">$39.00 </h2>
+                  <span class="d-flex padding-c-p" style="padding-left: 75px; margin-top: 20px;">
+                    <div class="pro-color d-flex justify-content-center align-items-center">
+                      <div class="pro-back" style="background-color: brown">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: teal">
+                      </div>
+                    </div>
+                    <div class="pro-color d-flex justify-content-center align-items-center" style="border-color: #e4e4e4;">
+                      <div class="pro-back" style="background-color: lightcoral;">
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style="position: relative;">
+        <div class="banner-5"></div>
+        <div class="container position-absolute banner-5-position" style="top: 30%; left:8%">
+          <div class="row">
+            <div class="col-xxl-12 col-12 d-flex justify-content-start">
+              <div class="col-4 col-lg-5 col-xl-4 text-center">
+                <h1 class="fp display-3 fw-bold">Milancelos</h1>
+                <h1 class="display-3 fw-medium">---</h1>
+                <P class="fj fs-3">
+                  Quisquemos sodales suscipit tortor ditaemcos<br/> condimentum meleifend diverra loremous.
+                </P>
+                <button class="cta d-none d-lg-flex" style="margin-left: 100px; margin-top: 30px;">
+                  <span class="span fj w">SHOP NEW</span>
+                  <span class="second">
+                    <svg width="50px" height="20px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                        <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                        <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                      </g>
+                    </svg>
+                  </span> 
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style="padding-top: 80px; padding-bottom: 70px;" class="padd-img">
+        <div class="container-fluid pd-left">
+          <div class="row">
+            <div class="col-xxl-12 position-relative padding-side-0">
+              <div class="col-xxl-8 ps-2 padding-0">
+                <div class="img-comp-container">
+                  <div class="img-comp-img">
+                    <img src="img/Layer-71081_1270x.jpg" width="989" height="560" class="img-width">
+                  </div>
+                  <div class="img-comp-img img-comp-overlay">
+                    <img src="img/Layer-7108_1270x.jpg" width="989" height="560" class="img-width">
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-4 position-absolute pos-img2" style="top: 10px; right: 50px;">
+                <div class="rounded-br position-relative text-center">
+                  <div class="position-absolute br-border d-flex justify-content-center align-items-center">
+                    <div>
+                      <h3 class="fj fs-4 a2 fw-medium">INTRODUCING</h3>
+                      <h1 class="fp display-4 a2 fw-medium pt-4">Iconic Divine</h1>
+                      <h1 class="fp display-4 a2 fw-medium">Eyeshadow Palettes</h1>
+                      <p class="fj a2 fs-3 pt-5">New Shades. Improved Formula.<br/> Full color Pay-Off.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container" style="max-width: 100%;">
+          <div class="row">
+            <div class="col-xxl-12 d-none d-xl-block">
+              <div class="text-center" style="padding: 20px 0px;">
+                <p class="b fp display-4 fw-medium">Featured On Ella</p>
+              </div>
+              <div class="col-xxl-12 d-flex" style="padding: 0px 0px;">
+                <div class="col-xxl-4 col-wh mx-2 pro">
+                  <div class="img_f-1" style="position: relative;">
+                    
+                  </div>
+                </div>
+                <div class="col-xxl-4 col-wh mx-2 pro">
+                  <div class="img_f-2"  style="position: relative;">
+                    
+                  </div>
+                </div>
+                <div class="col-xxl-4 col-wh mx-2 pro">
+                  <div class="img_f-3"  style="position: relative;">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 575px -->
+            <div class="col-xxl-12 d-xl-none">
+              <div class="text-center" style="padding: 15px 0px;">
+                <p class="b fp display-4 fw-medium">Featured On Ella</p>
+              </div>
+              <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="img/1_f2790e34-75e9-4416-bbc6-d5cc8064653f_570x.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption" style="position: absolute; left: 50%; top: 50%; transform: translateX(-50%);">
+                      
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/2_eee37877-c267-43ea-a3dc-d76cce0e832c_570x.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption" style="position: absolute; left: 50%; top: 50%; transform: translateX(-50%);">
+                      
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/3_9ee379ee-fa77-41df-ab83-c20330e29cab_570x.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption" style="position: absolute; left: 50%; top: 50%; transform: translateX(-50%);">
+                      
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style="padding-top: 80px; padding-bottom: 80px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-12" style="padding-bottom: 50px;">
+              <div class="text-center">
+                <h1 class="fp display-5 fw-medium">Why's Us?</h1>
+              </div>
+            </div>
+            <div class="col-xxl-12 d-xxl-flex d-block d-lg-flex">
+              <div class="col-xxl-4 col-12 col-lg-4">
+                <div class="col-xxl-12 text-center pb-5"><i class="fa-solid fa-truck-fast display-1 b"></i></div>
+                <div class="col-xxl-12">
+                  <h2 class="fj b fs-2 text-center fw-medium">Always Free Shipping</h2>
+                  <p class="fj fs-3 text-center">Nam tempus turpis at metus cosmo<br/> scelerisque placerat nulla deumantos<br/> delos sollicitudin delos felis.</p>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-12 col-lg-4">
+                <div class="col-xxl-12 text-center pb-5"><i class="fa-solid fa-box display-1 b"></i></div>
+                <div class="col-xxl-12">
+                  <h2 class="fj b fs-2 text-center fw-medium">Easy Free Return</h2>
+                  <p class="fj fs-3 text-center">Nam tempus turpis at metus cosmo<br/> scelerisque placerat nulla deumantos<br/> delos sollicitudin delos felis.</p>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-12 col-lg-4">
+                <div class="col-xxl-12 text-center pb-5"><i class="fa-solid fa-medal display-1 b"></i></div>
+                <div class="col-xxl-12">
+                  <h2 class="fj b fs-2 text-center fw-medium">Genuine Product</h2>
+                  <p class="fj fs-3 text-center">Nam tempus turpis at metus cosmo<br/> scelerisque placerat nulla deumantos<br/> delos sollicitudin delos felis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section style="background-color: black; padding-top: 60px; padding-bottom: 50px;" class="p-last">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xxl-12 d-xxl-flex d-block d-lg-flex">
+              <div class="col-xxl-3 col-12 col-md-6 col-lg-3">
+                <img src="img/logo_footer_da16b4d0-abc9-4271-ae42-f23fe7e7e8f6_200x.png"/>
+                <p class="w fj fs-3 pt-5">685 Market Street<br/>
+                  San Francisco, CA 94105,<br/>
+                  United States
+                  </p>
+                  <p class="w fj fs-3">
+                    Call us: (090)-123-ELLA<br/>
+                    Email: email@domain.com
+                  </p>
+              </div>
+              <div class="col-xxl-2 col-12 col-md-6 col-lg-2">
+                <h1 class="w fw-bold fs-3 pb-4">CATEGORIES</h1>
+                <p class="w fs-4">Bibendumetos</p>
+                <p class="w fs-4">Senectus</p>
+                <p class="w fs-4">Consequatod</p>
+                <p class="w fs-4">Scelerisque Yurnas</p>
+                <p class="w fs-4">Loremouticas</p>
+                <p class="w fs-4">Pellentes Habitanto</p>
+              </div>
+              <div class="col-xxl-2 col-12 col-md-6 col-lg-2">
+                <h1 class="w fw-bold fs-3 pb-4">FURTHER INFO.</h1>
+                <p class="w fs-4">About</p>
+                <p class="w fs-4">Customer Service</p>
+                <p class="w fs-4">Reward Program</p>
+                <p class="w fs-4">Shipping & Returns</p>
+                <p class="w fs-4">Privacy Policy</p>
+                <p class="w fs-4">Terms & Conditions</p>
+                <p class="w fs-4">Blog</p>
+              </div>
+              <div class="col-xxl-2 col-12 col-md-6 col-lg-2">
+                <h1 class="w fw-bold fs-3 pb-4">CUSTOMER SERVICE</h1>
+                <p class="w fs-4">Search Terms</p>
+                <p class="w fs-4">Advanced Search</p>
+                <p class="w fs-4">Orders And Returns</p>
+                <p class="w fs-4">Contact Us</p>
+                <p class="w fs-4">Theme FAQs</p>
+                <p class="w fs-4">Consultant</p>
+                <p class="w fs-4">Store Locations</p>
+              </div>
+              <div class="col-xxl-3 col-12 col-md-6 col-lg-3">
+                <h1 class="w fw-bold fs-3 pb-4">NEWSLETTER SIGN UP</h1>
+                <p class="w fs-4">Receive our latest updates about our products and promotions.</p>
+                <div class="col-xxl-2" style="background-color: white !important; width: 100%; height: 50px;"><h1 style="color: #6e6969;" class="text-center fs-4 pt-4">Enter Your Email</h1></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+
+  <!-- js -->
+  <script src="js/jquery-2.1.1.js"></script>
+  <script src="js/main.js"></script> 
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- aos -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <!-- cdn -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+  <!-- img compere -->
+  <script>
+    /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+    initComparisons();
+  </script>
+</body>
+</html>

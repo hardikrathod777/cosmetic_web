@@ -1,0 +1,500 @@
+.fp{
+    font-family: 'Playfair Display';
+}
+.fj{
+    font-family: 'Jost';
+}
+.w{
+    color: white;
+}
+.b{
+  color: #000000;
+}
+.e4{
+  color: #e4e4e4;
+}
+.logo-w img{
+    width: 90%;
+    height: 60%;
+}
+a{
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+
+.cta {
+    display: flex;
+    padding: 11px 33px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: white;
+    background: black;
+    transition: 1s;
+    box-shadow: 6px 6px 0 #e35f21;
+    transform: skewX(-15deg);
+    border: none;
+  }
+  
+  .cta:focus {
+    outline: none;
+  }
+  
+  .cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #e35f21;
+  }
+  
+  .cta .second {
+    transition: 0.5s;
+    margin-right: 0px;
+  }
+  
+  .cta:hover  .second {
+    transition: 0.5s;
+    margin-right: 20px;
+  }
+  
+  .span {
+    transform: skewX(15deg)
+  }
+  
+  .second {
+    width: 10px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
+  
+  .one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+  }
+  
+  .two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+  }
+  
+  .cta:hover .three {
+    animation: color_anim 1s infinite 0.2s;
+  }
+  
+  .cta:hover .one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+  }
+  
+  .cta:hover .two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+  }
+  
+  @keyframes color_anim {
+    0% {
+      fill: white;
+    }
+  
+    50% {
+      fill: #e35f21;
+    }
+  
+    100% {
+      fill: white;
+    }
+  }
+/* banner */
+  .banner{
+    height: 550px;
+    background-image: url('../img/home-5-slider-min.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .img-1{
+    background-image: url("../img/h5c1-spotlight-banner-1_570x.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 493px !important;
+    height: 370px;
+    transition: all 1s;
+  }
+  .col-wh{
+    width: 493px !important;
+    height: 370px !important;
+  }
+  .img-2{
+    background-image: url("../img/h5c1-spotlight-banner-2_570x.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 493px !important;
+    height: 370px;
+    transition: all 1s;
+  }
+  .img-3{
+    background-image: url("../img/h5c1-spotlight-banner-3_570x.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 493px !important;
+    height: 370px;
+    transition: all 1s;
+  }
+  .pro{
+    overflow: hidden;
+  }
+
+  .pro:hover .img-1{
+    transform: scale(1.1)
+  }
+  .pro:hover .img-2{
+    transform: scale(1.1);
+  }
+  .pro:hover .img-3{
+    transform: scale(1.1);
+  }
+  .text-position{
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+  }
+  .product-1{
+    background-image: url("../img/31_4ed249af-b411-4b46-b696-231e2a12332d_940x.jpg");
+    width: 270px;
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 2s;
+  }
+  .product-2{
+    background-image: url("../img/40-compressor_940x.png");
+    width: 270px;
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 2s;
+  }
+  .product-3{
+    background-image: url("../img/23_328753b5-3ea2-43c9-9a32-84f68cefce76_940x.jpg");
+    width: 270px;
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 2s;
+  }
+  .product-4{
+    background-image: url("../img/12-compressor_69d9ff1a-1692-46bc-b90f-d7c0b579665a_940x.png");
+    width: 270px;
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 2s;
+  }
+
+  .p-hover:hover .product-1{
+    opacity: 0;
+  }
+
+  .product_h-1{
+    background-image: url("../img/35-compressor_940x.png");
+    width: 270px;
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0%;
+    opacity: 0;
+    transition: all 3s;
+  }
+
+  .p-hover:hover .product_h-1{
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  .product_h-2{
+    background-image: url("../img/39-compressor_940x.png");
+    width: 270px;
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0%;
+    opacity: 0;
+    transition: all 2.5s;
+  }
+  .p-hover:hover .product_h-2{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .p-hover:hover .product-2{
+    opacity: 0;
+  }
+
+  .product_h-3{
+    background-image: url("../img/11-compressor_076662b4-fa80-4ebb-97f6-f26db5adec01_940x.png");
+    width: 270px;
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0%;
+    opacity: 0;
+    transition: all 2.5s;
+  }
+  .p-hover:hover .product_h-3{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .p-hover:hover .product-3{
+    opacity: 0;
+  }
+
+  .product_h-4{
+    background-image: url("../img/8-compressor_a709f5a9-2ecc-416b-9ffa-d0111a0981fc_940x.png");
+    width: 270px;
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0%;
+    opacity: 0;
+    transition: all 2.5s;
+  }
+  .p-hover:hover .product_h-4{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .p-hover:hover .product-4{
+    opacity: 0;
+  }
+
+.rate-ce{
+  color: #e4e4e4;
+  font-size: 16px;
+}
+
+.pro-color{
+  width: 30px;
+  height: 30px;
+  border: 1px solid #232323;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.pro-back{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: olive;
+}
+
+.banner-3{
+  background-image: url('../img/home-5-banner-image-1_1880x.jpg');
+  width: 100%;
+  height: 570px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* second */
+.product-5{
+  background-image: url("../img/38-compressor_940x.png");
+  width: 270px;
+  height: 270px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 2s;
+}
+.p-hover:hover .product-5{
+  opacity: 0;
+}
+.product_h-5{
+  background-image: url("../img/37-compressor_940x.png");
+  width: 270px;
+  height: 270px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0%;
+  opacity: 0;
+  transition: all 3s;
+}
+.p-hover:hover .product_h-5{
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.product-6{
+  background-image: url("../img/44_88b3353c-8b1d-47c2-ab24-de61ac58f3e9_940x.jpg");
+  width: 270px;
+  height: 270px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 2s;
+}
+.p-hover:hover .product-6{
+  opacity: 0;
+}
+.product_h-6{
+  background-image: url("../img/21-compressor_870x.png");
+  width: 270px;
+  height: 270px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0%;
+  opacity: 0;
+  transition: all 3s;
+}
+.p-hover:hover .product_h-6{
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.product-7{
+  background-image: url("../img/41_800x.jpg");
+  width: 270px;
+  height: 270px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 2s;
+}
+.p-hover:hover .product-7{
+  opacity: 0;
+}
+.product_h-7{
+  background-image: url("../img/41-pink_940x.jpg");
+  width: 270px;
+  height: 270px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0%;
+  opacity: 0;
+  transition: all 2s;
+}
+.p-hover:hover .product_h-7{
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.product-8{
+  background-image: url("../img/32-compressor_6917c4ac-b8ee-4ef2-be4a-8e1e4dbf4482_800x.png");
+  width: 270px;
+  height: 270px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 2s;
+}
+.p-hover:hover .product-8{
+  opacity: 0;
+}
+.product_h-8{
+  background-image: url("../img/28-compressor_d7e7112b-47e4-4c50-aaaf-bc28dafb7b2d_940x.png");
+  width: 270px;
+  height: 270px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0%;
+  opacity: 0;
+  transition: all 3s;
+}
+.p-hover:hover .product_h-8{
+  opacity: 1;
+  transform: scale(1.2);
+}
+.banner-5{
+  background-image: url("../img/home-5-banner-image-2_1880x.jpg");
+  width: 100%;
+  height: 575px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* img compere */
+.img-comp-container {
+  position: relative;
+  width: 100%;
+  height: 560px; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow:hidden;
+}
+
+.img-comp-img img{
+  display:block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index:9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+.rounded-br{
+  width: 525px;
+  height: 525px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(218, 239, 228, 1) 13%, rgba(250, 240, 223, 1) 86%)
+}
+.br-border{
+  width: 525px;
+  height: 525px;
+  border: 1px solid #313634;
+  border-radius: 50%;
+  top:10px;
+  left: 10px;
+}
+.a2{
+  color: #2a0e2a;
+}
+
+/* ss */
+.img_f-1{
+  background-image: url("../img/1_f2790e34-75e9-4416-bbc6-d5cc8064653f_570x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 493px !important;
+  height: 370px;
+  transition: all 1s;
+}
+
+.img_f-2{
+  background-image: url("../img/2_eee37877-c267-43ea-a3dc-d76cce0e832c_570x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 493px !important;
+  height: 370px;
+  transition: all 1s;
+}
+
+.img_f-3{
+  background-image: url("../img/3_9ee379ee-fa77-41df-ab83-c20330e29cab_570x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 493px !important;
+  height: 370px;
+  transition: all 1s;
+}
+.pro:hover .img_f-1{
+  transform: scale(1.1)
+}
+.pro:hover .img_f-2{
+  transform: scale(1.1);
+}
+.pro:hover .img_f-3{
+  transform: scale(1.1);
+}
